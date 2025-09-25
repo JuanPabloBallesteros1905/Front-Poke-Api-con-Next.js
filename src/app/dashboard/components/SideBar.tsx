@@ -21,7 +21,7 @@ const itemsSideBar = [
         subtitle: 'View Counter'
     },
     {
-        path: '/dashboard/pokemon',
+        path: '/dashboard/pokemons',
         icon: <IoFootball />,
         title: 'Pokemons',
         subtitle: 'Show the pokemons'
@@ -32,7 +32,7 @@ export const SideBar = () => {
     return (
         <div id="menu"
             style={{ width: "400px" }}
-            className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64   left-0 h-screen overflow-y-scroll">
+            className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64   left-0  overflow-y-scroll">
             <div id="logo" className="my-4 px-6">
 
                 <h1 className="text-lg flex items-center md:text-2xl font-bold text-white">
@@ -47,7 +47,7 @@ export const SideBar = () => {
                     </span>
 
 
-                    <span className="text-blue-500">8</span>.</h1>
+                </h1>
                 <p className="text-slate-500 text-sm">Manage your actions and activities</p>
             </div>
             <div id="profile" className="px-6 py-10">

@@ -5,12 +5,37 @@ import Image from "next/image";
 
 
 interface Props {
-    params: { id: string }
+    params: Promise<{ id: string }> // Cambiar a Promise
 }
 
 
+
+// Con esta funcion precargamo data para tenerla, en este caso solo estoy cargando los ID que le estoy pasando 
+
+
+export async function generateStaticParams() {
+
+
+
+    return [
+        { id: '1' },
+        { id: '2' },
+        { id: '3' },
+        { id: '4' },
+    ]
+
+}
+
+
+
+
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { id, name } = await getPokeminById(params.id)
+
+
+    const newId = (await params).id
+
+    const { id, name } = await getPokeminById(newId)
 
     console.log(name);
 
@@ -48,7 +73,10 @@ const getPokeminById = async (id: string): Promise<Pokemon> => {
 
 export default async function Pokemonpage({ params }: Props) {
 
-    const pokeResponse = await getPokeminById(params.id)
+
+    const newId = (await params).id
+
+    const pokeResponse = await getPokeminById(newId)
 
     return (
 

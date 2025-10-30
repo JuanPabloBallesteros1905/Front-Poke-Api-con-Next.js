@@ -1,7 +1,7 @@
 
 
 'use client'
-import { Metadata } from 'next';
+
 import { useState } from 'react'
 
 import React from 'react'
